@@ -1,3 +1,7 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1 align="center">Today News</h1>
+  <div class="row" align="center">
+  	<% @articles.each do |article| %>
+      <%= render 'articles/news', article:article%>
+    <%end%>
+</div>
 

@@ -1,0 +1,26 @@
+<%= form_for @article do |f| %>
+
+<p><%= f.label :category %></p>
+<%= select_tag 'category_id', options_from_collection_for_select(Category.all, 'id', 'name')%>
+
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :shortbody %><br>
+  <%= f.text_area :shortbody,  :rows => 5, :cols => 120 %>
+</div>
+
+<div class="form-group">
+  <%= f.label :body %><br>
+  <%= f.text_area :body,  :rows => 40, :cols => 120 %>
+ </br>
+</div>
+
+<div class="form-group">
+<%= f.submit 'Зберегти'%>
+<%= link_to 'Назад', :back %>
+</div>
+<%end%>

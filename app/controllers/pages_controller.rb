@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
-  def index
-  end
+	def index
+	  @articles=Article.all
+      @articles.each do |article|
+      end
+	end
+
 end
