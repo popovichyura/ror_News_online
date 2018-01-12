@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
+		if current_user.role == "Editor"	
 	   params[:article][:category_id]=params[:category_id]
         @article = current_user.articles.build(article_params)
         if @article.save
@@ -14,6 +15,7 @@ class ArticlesController < ApplicationController
         else
       	  render 'new'
         end
+    end
 	end
 
 	def edit
