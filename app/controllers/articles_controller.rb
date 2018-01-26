@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :authenticate_user!, exist:[:show]
+	before_action :authenticate_user!, only:[:create,:new,:edit,:update]
 	before_action :set_article, only:[:edit,:update,:destroy,:show]
       
 	def new
@@ -33,11 +33,12 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
+		@comments=ArticleComment.where(article_id: params[:id])
 	end
 
 	
 	def categories
-        pp @articles=Article.where(category_id: params[:id])
+        @articles=Article.where(category_id: params[:id])
 	end
 
 	private

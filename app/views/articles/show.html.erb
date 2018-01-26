@@ -1,2 +1,16 @@
 <h1><%= @article.title%></h1>
-<%=  @article.body %>
+<%= sanitize @article.body %>
+
+<%=form_for :article_comment , url:article_article_comments_path(@article.id) do |f|%>
+<%=f.text_field :text %>
+
+<%=f.submit%>
+<%end%>
+
+<% @comments.each do |c| %>
+<hr>
+<%= c.text%><br/>
+
+User: <%= c.user.nickname%>
+<hr>
+<%end%>
