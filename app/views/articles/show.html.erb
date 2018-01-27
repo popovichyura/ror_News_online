@@ -1,6 +1,6 @@
 <h1><%= @article.title%></h1>
 <%= sanitize @article.body %>
-
+<%= tinymce%> <br/>
 <%=form_for :article_comment , url:article_article_comments_path(@article.id) do |f|%>
 <%=f.text_field :text %>
 
