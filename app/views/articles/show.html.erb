@@ -9,8 +9,8 @@
 
 <% @comments.each do |c| %>
 <hr>
-<%= c.text%><br/>
 <p><%= image_tag c.user.avatar.url(:thumb), width: 30, height: 30 %></p>
 User: <%= c.user.nickname%>
+<%= c.text%>
 <hr>
 <%end%>

@@ -3,34 +3,28 @@
   <div class="container-fluid">
     
     <ul class="nav navbar-nav">
-     <!-- <li class="active"><a href="#">NewsOnline</a></li>
-      <li><a href="#">World</a></li>
-      <li><a href="#">Busines</a></li>
-      <li><a href="#">Tech</a></li>
-      <li><a href="#">Sport</a></li>
-      <li><a href="#">Culture</a></li>-->
        <div class="navbar-header" style="background-color: #000000; margin-left: 5px; ">
-     <li class="active" style="margin-left: 7px;"> <%=link_to root_path, class:"navbar-brand" do%> NewsOnline<%end%></li>
+     <li class="active" style="margin-left: 7px;"> <%=link_to root_path, class:"navbar-brand" do%><span style="color: #ffffff;"> NewsOnline</span><%end%></li>
       </div>
       
-      <li><%=link_to categories_path(1) do%>World<%end%></li>
-      <li><%=link_to categories_path(2) do %>Busines <%end%></li>
-      <li><%=link_to categories_path(3) do %>Sport<%end%></li>
-      <li><%=link_to categories_path(4) do %>Tech <%end%></li>
-      <li><%=link_to categories_path(5) do %>Culture<%end%></li>
+      <li ><%=link_to categories_path(1) do%><span style="color: #ffffff;">World</span><%end%></li>
+      <li><%=link_to categories_path(2) do %><span style="color: #ffffff;">Busines</span> <%end%></li>
+      <li><%=link_to categories_path(3) do %><span style="color: #ffffff;">Sport</span><%end%></li>
+      <li><%=link_to categories_path(4) do %><span style="color: #ffffff;">Tech </span><%end%></li>
+      <li><%=link_to categories_path(5) do %><span style="color: #ffffff;">Culture</span><%end%></li>
     
 </ul>
     </ul> 
     <% if current_user.nil? %>
 <%= link_to user_session_path do %>
 <ul class="nav navbar-nav navbar-right" style="margin-top: 15px; margin-right: 16px;">
-<span class="glyphicon glyphicon-log-in" style="color: #c0c0c0;"> Login </span>
+<span class="glyphicon glyphicon-log-in" style="color: #ffffff;"> Login </span>
 </ul>
 <%end%>
 <% else %>
 <%= link_to destroy_user_session_path, method: :delete do %>
 <ul class="nav navbar-nav navbar-right" style="margin-top: 15px; margin-right: 16px;">
-<span class="glyphicon glyphicon-log-out" style="color: #c0c0c0;">Logout</span> 
+<span class="glyphicon glyphicon-log-out" style="color: #ffffff;">Logout</span> 
 </ul>
 <%end%>
 <% end %>
